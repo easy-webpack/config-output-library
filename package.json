@@ -6,7 +6,7 @@
   "scripts": {
     "test": "cross-env TS_NODE_FAST=true TS_NODE_NO_PROJECT=true ava",
     "prepublish": "typings install",
-    "build": "rimraf dist && tsc -p .",
+    "build": "cross-env rimraf dist && tsc -p .",
     "semantic-release": "npm run build && semantic-release pre && npm publish --access=public && semantic-release post",
     "postinstall": "typings install",
     "postpublish": "greenkeeper-postpublish"
