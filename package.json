@@ -1,0 +1,60 @@
+{
+  "name": "@easy-webpack/config-output-library",
+  "description": "Easy Webpack configuration function for library output",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    // Added cross-env to allow development on Windows.
+    "test": "cross-env TS_NODE_FAST=true TS_NODE_NO_PROJECT=true ava",
+    "prepublish": "typings install",
+    "build": "rimraf dist && tsc -p .",
+    "semantic-release": "npm run build && semantic-release pre && npm publish --access=public && semantic-release post",
+    "postinstall": "typings install",
+    "postpublish": "greenkeeper-postpublish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/easy-webpack/config-output-library.git"
+  },
+  "keywords": [
+    "output",
+    "library",
+    "webpack",
+    "easy",
+    "configurator",
+    "configuration",
+    "config",
+    "simple"
+  ],
+  "author": "Mike Morrison <tellmike@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/easy-webpack/config-output-library/issues"
+  },
+  "homepage": "https://github.com/easy-webpack/config-output-library#readme",
+  "devDependencies": {
+    "@easy-webpack/core": "*",
+    "ava": "^0.15.2",
+    "cross-env": "^2.0.0",
+    "greenkeeper-postpublish": "^1.0.0",
+    "semantic-release": "^4.3.5",
+    "ts-node": "^0.9.3",
+    "tslint": "^3.13.0",
+    "tslint-config-standard": "^1.3.0",
+    "typescript": ">=1.9.0-dev.20160619-1.0 || ^2.0.0",
+    "typings": "^1.3.1"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "@easy-webpack/core": "*"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.{ts,js}"
+    ],
+    "tap": false,
+    "require": [
+      "ts-node/register"
+    ]
+  }
+}
