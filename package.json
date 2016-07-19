@@ -3,6 +3,7 @@
   "description": "Easy Webpack configuration function for library output",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "version": "0.0.1",
   "scripts": {
     "test": "cross-env TS_NODE_FAST=true TS_NODE_NO_PROJECT=true ava",
     "prepublish": "typings install",
