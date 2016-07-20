@@ -1,19 +1,18 @@
 import { WebpackConfig } from '@easy-webpack/core'
 
-export type TargetType = "var" | "this" | "commonjs" | "commonjs2" | "amd" | "umd";
+type TSTarget = "var" | "this" | "commonjs" | "commonjs2" | "amd" | "umd";
+
 /**
  * Library support for Webpack
  * See: https://webpack.github.io/docs/configuration.html#output-library
  */
-export function outputLibrary(
-  library?: string,
-  libraryTarget: TargetType = 'var',
-  umdNamedDefine: boolean = false) {
+export = function outputLibrary({ library = undefined, libraryTarget = 'var', umdNamedDefine = false }) {
+
   let cfg: WebpackConfig = { output: {} }
 
   return function outputLibrary(this: WebpackConfig): WebpackConfig {
 
-    cfg.output.libraryTarget = libraryTarget
+    cfg.output.libraryTarget = libraryTarget as TSTarget
     const isLibraryInvalid: boolean = typeof library !== 'string'
 
     switch (cfg.output.libraryTarget) {
