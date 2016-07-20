@@ -1,6 +1,6 @@
 import { WebpackConfig } from '@easy-webpack/core'
 
-type TSTarget = "var" | "this" | "commonjs" | "commonjs2" | "amd" | "umd";
+type TSTarget = 'var' | 'this' | 'commonjs' | 'commonjs2' | 'amd' | 'umd';
 
 /**
  * Library support for Webpack
@@ -50,12 +50,12 @@ export = function outputLibrary({ library = undefined, libraryTarget = 'var', um
         cfg.output.library = library ? library : undefined
         break
       case 'umd':
-          cfg.output.library = library ? library : undefined
-          cfg.output.umdNamedDefine = umdNamedDefine
-          if (umdNamedDefine && (cfg.output.library === undefined || cfg.output.library === null)) {
-              throw Error(`[config-output-library] When umdNamedDefine = true, library must be set!`)
-          }
-          break
+        cfg.output.library = library ? library : undefined
+        cfg.output.umdNamedDefine = umdNamedDefine
+        if (umdNamedDefine && (cfg.output.library === undefined || cfg.output.library === null)) {
+            throw Error(`[config-output-library] When umdNamedDefine = true, library must be set!`)
+        }
+        break
       default:
         throw Error(`[config-output-library] ${libraryTarget} is not valid for "libraryTarget"!`)
     }
