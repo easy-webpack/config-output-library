@@ -1,4 +1,4 @@
-import { WebpackConfig } from '@easy-webpack/core'
+import { WebpackConfigWithMetadata } from '@easy-webpack/core'
 
 type TSTarget = 'var' | 'this' | 'commonjs' | 'commonjs2' | 'amd' | 'umd';
 
@@ -8,9 +8,9 @@ type TSTarget = 'var' | 'this' | 'commonjs' | 'commonjs2' | 'amd' | 'umd';
  */
 export = function outputLibrary({ library = undefined, libraryTarget = 'var', umdNamedDefine = false }) {
 
-  let cfg: WebpackConfig = { output: {} }
+  let cfg: WebpackConfigWithMetadata = { output: {} }
 
-  return function outputLibrary(this: WebpackConfig): WebpackConfig {
+  return function outputLibrary(this: WebpackConfigWithMetadata): WebpackConfigWithMetadata {
 
     cfg.output.libraryTarget = libraryTarget as TSTarget
     const isLibraryInvalid: boolean = typeof library !== 'string'
