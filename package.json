@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/easy-webpack/config-output-library#readme",
   "devDependencies": {
-    "@easy-webpack/core": "*",
+    "@easy-webpack/core": "1.4.3",
     "@types/debug": "0.0.28",
     "@types/lodash": "0.0.28",
     "@types/node": "^4.0.30",
